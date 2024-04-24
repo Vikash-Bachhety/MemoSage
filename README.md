@@ -16,9 +16,9 @@ This is a simple web application for managing notes. It allows users to create, 
 1. Clone the repository:
 
    ```bash
-   git clone: https://github.com/Vikash-Bachhety/MemoSage
+   [git clone:](https://github.com/Vikash-Bachhety/memoSage)
 
 2. Visit the website:
 
    ```bash
-   Visit here: https://memosage.onrender.com
+   [Visit here:](https://memosage-production.up.railway.app/)
