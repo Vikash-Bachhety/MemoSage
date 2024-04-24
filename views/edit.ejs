@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit File Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-full h-screen bg-slate-900 flex justify-center items-center">
+    <form class="w-11/12 md:w-1/2 bg-white bg-opacity-10 h-auto rounded-lg flex flex-col items-center py-14 gap-y-8 text-white" method="post" action="/edit">
+        <input class="w-2/3 bg-slate-800 rounded-lg focus:outline-none text-xl p-2" type="text" value="<%= note.title %>"
+            name="oldName" readonly>
+        <textarea class="w-2/3 bg-slate-700 focus:bg-slate-800 rounded-lg h-80 focus:outline-none text-xl p-2" name="newDetails" id="" cols="30" rows="10" required><%= note.details %></textarea>
+        <div class="flex justify-evenly w-full md:w-1/2">
+            <a class="bg-white font-semibold text-center py-2 px-6 rounded-md text-blue-600 hover:bg-slate-200" href="/"> Back</a>
+            <input class="py-2 px-4 rounded-md bg-orange-500 hover:bg-orange-600" type="submit" value="Update">
+        </div>
+    </form>
+    </div>
+</body>
+
+</html>

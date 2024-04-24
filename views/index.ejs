@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoSage</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="../favicon.png">
+</head>
+
+<body class="bg-gray-900">
+    <div class="flex flex-col items-center py-12">
+        <div class="flex items-center justify-center">
+            <img class="h-12 w-12 mr-2" src="../logo.png" alt="logoicon">
+            <h1 class="text-yellow-400 text-4xl font-semibold font-serif">MemoSage`</h1>
+        </div>
+        <form class="w-11/12 max-w-xl mx-auto mt-8" method="post" action="/create">
+            <div class="flex flex-col gap-4">
+                <input class="bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 px-4 py-2 text-white"
+                    type="text" placeholder="Title" name="title">
+                <textarea class="bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 px-4 py-2 text-white resize-none"
+                    placeholder="Enter description" name="details" rows="8"></textarea>
+                <button class="py-2 px-4 bg-blue-500 hover:bg-blue-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    type="submit">Add</button>
+            </div>
+        </form>
+
+        <div class="flex justify-center items-center flex-wrap w-full mx-5 gap-6 mt-8">
+            <% if(notes.length > 0) { %>
+            <% notes.forEach(note=> { %>
+            <div class="bg-gray-800 w-96 rounded-lg p-4 shadow-md hover:bg-gray-700">
+                <h1 class="text-xl font-semibold text-white truncate"><%= note.title %></h1>
+                <div class="flex justify-between mt-4">
+                    <a class="text-blue-400 hover:text-blue-300" href="/files/<%=note.title%>">Read more...</a>
+                    <a class="text-yellow-300 hover:text-yellow-200" href="/edit/<%=note.title%>">Edit</a>
+                </div>
+            </div>
+            <% }) %>
+            <% } else { %>
+            <h1 class="text-white">No tasks, please add one.</h1>
+            <%}%>
+        </div>
+    </div>
+</body>
+
+</html>
